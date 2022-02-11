@@ -1,0 +1,76 @@
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    border-style:groove;
+    border-radius: 10px;
+    border-color: navy;
+}
+
+h1 {
+    font-size: 50px;
+    color:green;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.left-column {
+    border-style:ridge;
+    border-radius: 10px;
+    border-color: navy;
+    margin: 15px;
+}
+
+.search-area {
+    font-size: 30px;
+    color: teal;
+    border-style:ridge;
+    border-radius: 10px;
+    border-color: aqua;
+    margin: 10px;
+    padding:10px;
+}
+
+.search-history {
+    font-size: 30px;
+    color: teal;
+    border-style:ridge;
+    border-radius: 10px;
+    border-color: aqua;
+    margin: 10px;
+    padding:10px;
+}
+
+.right-column {
+    border-style:ridge;
+    border-radius: 10px;
+    border-color: navy;
+    margin: 15px;
+}
+
+.data {
+    font-size: 30px;
+    color: teal;
+    border-style:ridge;
+    border-radius: 10px;
+    border-color: aqua;
+    margin: 10px;
+    padding:10px;
+}
+
+.forecast {
+    font-size: 30px;
+    color: teal;
+    border-style:ridge;
+    border-radius: 10px;
+    border-color: aqua;
+    margin: 10px;
+    padding:10px;
+}
