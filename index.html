@@ -18,18 +18,30 @@
     <div class="container">
         <div class="left-column">
             <div class="search-area">
-                <label for="search-input">Enter city name here:</label>
+                <label for="search-input" id="search-label">ENTER CITY NAME:</label>
                 <input type="text" id="search-input">
-                <button type="button" id="submit-button">submit</button>
+                <button type="button" id="search-button">SEARCH</button>
             </div>
 
-            <div class="search-history">search history</div>
+            <div class="search-history">SEARCH HISTORY</div>
         </div>
         <div class="right-column">
-            <div class="data">weather report</div>
+            <div class="data">
+                <h2>CURRENT WEATHER:</h2>
+                <p id='city'></p>
+                <p id='date'></p>
+                <img id='icon'></img>
+                <p id='description'></p>
+                <p id='temp'></p>
+                <p id='wind'></p>
+                <p id='humidity'></p>
+                <p id='uvindex'></p>
+                
+            </div>
             <div class="forecast">
+                <h2>5 DAY FORECAST:</h2>
                 <ul>
-                    5 day forecast
+                    
                 </ul>
             </div>
         </div>
