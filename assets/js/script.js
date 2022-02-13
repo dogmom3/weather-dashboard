@@ -31,13 +31,13 @@ function findWeatherByCity(city) {
             console.log('one call', data);
             cityEl.textContent = city
             //add date later with datejs
-            iconEl.textContent = src ="http://openweathermap.org/img/wn/10d@2x.png"+data.weather[0].icon+" .png";
+            // iconEl.src ="http://openweathermap.org/img/wn/"+data.weather[0].icon+".png";
             tempEl.textContent = data.current.temp;
             wind_speedEl.textContent = data.current.wind_speed;
             humidityEl.textContent = data.current.humidity;
-            uviEl.textContent = data.current.uvi;
-            sunriseEl.textContent = data.current.sunrise;
-            sunsetEl.textContent = data.current.sunset;
+            uviEl.textContent = data.current.uvi;  
+            // sunriseEl.textContent = data.current.sunrise;
+            // sunsetEl.textContent = data.current.sunset;
 
 
             //loop through all 7 weather attributes for each of the 5 days in the forecast
@@ -51,5 +51,12 @@ function findWeatherByCity(city) {
 searchBtnEl.addEventListener('click', function () {
     var userInput = searchInputEl.value
     findWeatherByCity(userInput);
+    // localStorage.setItem('userInput', searchInputEl.value());
+
+    var searchHistory = function () {
+        localStorage.setItem("userInput", JSON.stringify(data));
+      };
+      
+
 })
 
