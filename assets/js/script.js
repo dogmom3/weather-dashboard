@@ -31,7 +31,7 @@ function findWeatherByCity(city) {
             console.log('one call', data);
             cityEl.textContent = city
             //add date later with datejs
-            // iconEl.src ="http://openweathermap.org/img/wn/"+data.weather[0].icon+".png";
+            iconEl.src ="http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png";
             tempEl.textContent = data.current.temp;
             wind_speedEl.textContent = data.current.wind_speed;
             humidityEl.textContent = data.current.humidity;
@@ -41,9 +41,9 @@ function findWeatherByCity(city) {
 
 
             //loop through all 7 weather attributes for each of the 5 days in the forecast
-            for (let i = 1; i < tempEl; i++) {
-
-                console.log(daily(i));
+            for (let i = 1; i < 6; i++) {
+                // let eachDay = 
+                // console.log(daily[i]);
             }
         })
 };
