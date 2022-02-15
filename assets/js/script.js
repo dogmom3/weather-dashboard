@@ -7,8 +7,7 @@ var tempEl = document.getElementById('temp');
 var wind_speedEl = document.getElementById('wind_speed');
 var humidityEl = document.getElementById('humidity');
 var uviEl = document.getElementById('uvindex');
-var sunriseEl = document.getElementById('sunrise');
-var sunsetEl = document.getElementById('sunset');
+var daysEl = document.getElementById('days');
 
 // const timeInGMT = new Date(epochTime * 1000);
 
@@ -30,20 +29,31 @@ function findWeatherByCity(city) {
         .then(function (data) {
             console.log('one call', data);
             cityEl.textContent = city
-            //add date later with datejs
+            var timeNow = new Date();
+            
+            dateEl.textContent =timeNow
             iconEl.src ="http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png";
-            tempEl.textContent = data.current.temp;
+            tempEl.textContent = data.current.temp+ ' F';
             wind_speedEl.textContent = data.current.wind_speed;
             humidityEl.textContent = data.current.humidity;
             uviEl.textContent = data.current.uvi;  
-            // sunriseEl.textContent = data.current.sunrise;
-            // sunsetEl.textContent = data.current.sunset;
+        
 
 
             //loop through all 7 weather attributes for each of the 5 days in the forecast
             for (let i = 1; i < 6; i++) {
                 // let eachDay = 
-                // console.log(daily[i]);
+                var humidity = data.daily[i].humidity;
+                console.log(data.daily[i]);
+                var temp = data.daily[i].temp.day;
+                var date = data.daily[i].dt;
+                var wind = data.daily[i].wind_speed;
+                var icon = data.daily[i].weather[0].icon;
+               var divDay = document.createElement('div')
+                var pTemp = document.createElement('p')
+                pTemp.textContent = temp;
+                divDay.append(pTemp)
+                daysEl.append(divDay)
             }
         })
 };
