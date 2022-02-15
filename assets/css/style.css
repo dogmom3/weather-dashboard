@@ -1,6 +1,6 @@
 body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background: -webkit-repeating-linear-gradient(rgba(0,0,128,.75),rgba(0,255,255,.75) 10%,rgba(0,128,0,.75) 20%);
+    background: -webkit-radial-gradient(teal,mediumaquamarine, aqua,lime);
 }
 
 header, footer {
@@ -56,7 +56,7 @@ font-size: 2rem;
 
 #search-input {
     height: 8vh;
-    width: 12vw;
+    width: 15vw;
     font-size: 2.5rem;
     text-transform: capitalize;
     text-align: center;
@@ -90,7 +90,7 @@ background: mediumaquamarine;
 }
 
 .data {
-    width: 10vw;
+    width: 15vw;
     font-size: 2rem;
     text-transform:capitalize;
     font-weight: bold;
@@ -101,6 +101,7 @@ background: mediumaquamarine;
     border-radius: 10px;
     border-color: aqua;
     margin: 10px;
+    padding: 10px;
     background-color:lightcyan;
 }
 
@@ -112,17 +113,16 @@ background: mediumaquamarine;
     border-width: 10px;
     background-color: lightcyan;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
-.days {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+#days {
+    font-size: 25px;
+    font-weight: bold;
+    color: teal;
 }
 
-.day {
+/* .day {
     color: black;
     background:lightblue;
     border-style: groove;
@@ -132,4 +132,4 @@ background: mediumaquamarine;
     width: 8vw;
     height: 60vh;
     margin: 10px;
-}
+} */
