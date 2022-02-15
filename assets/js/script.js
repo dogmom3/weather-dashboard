@@ -49,10 +49,35 @@ function findWeatherByCity(city) {
                 var date = data.daily[i].dt;
                 var wind = data.daily[i].wind_speed;
                 var icon = data.daily[i].weather[0].icon;
+
                var divDay = document.createElement('div')
                 var pTemp = document.createElement('p')
                 pTemp.textContent = temp;
                 divDay.append(pTemp)
+                daysEl.append(divDay)
+
+                var divDay = document.createElement('div')
+                var pDate = document.createElement('p')
+                pDate.textContent = date;
+                divDay.append(pDate)
+                daysEl.append(divDay)
+
+                var divDay = document.createElement('div')
+                var pWind = document.createElement('p')
+                pWind.textContent = wind;
+                divDay.append(pWind)
+                daysEl.append(divDay)
+
+                var divDay = document.createElement('div')
+                var imgIcon = document.createElement('img')
+                imgIcon.textContent = icon;
+                divDay.append(imgIcon)
+                daysEl.append(divDay)
+
+                var divDay = document.createElement('div')
+                var pHumidity = document.createElement('p')
+                pHumidity.textContent = humidity;
+                divDay.append(pHumidity)
                 daysEl.append(divDay)
             }
         })
