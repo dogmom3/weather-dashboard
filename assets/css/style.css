@@ -28,7 +28,7 @@ h1 {
 }
 
 H2 {
-    font-size: 2rem;;
+    font-size: 2rem;
     color: navy;
     font-weight: bold;
     margin:10px; 
@@ -40,7 +40,6 @@ H2 {
     align-items: center;
     text-align: center;
     text-transform:capitalize;
-    font-size: 2rem;
     font-weight: bold;
     margin: 10px;
     padding:10px;
@@ -50,6 +49,27 @@ H2 {
     border-color: aqua;
     color:teal;
     background-color: lightcyan;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
+.searchbtn {
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    background: aqua;
+    height: 6vh;
+    width: 10vw;
+    font-size: 1.5rem;
+}
+
+.searchbtn:hover {
+    font-size: 1.7rem;
 }
 
 #search-label {
@@ -65,11 +85,12 @@ font-size: 2rem;
     text-transform: capitalize;
     text-align: center;
     color: black;
+    border-color: teal;
     font-weight: bold;
     margin: 10px;
     border-radius: 10px;
     border-width: 10px;
-    background:mediumaquamarine;
+    
 }
 
 .history {
@@ -104,7 +125,7 @@ background: mediumaquamarine;
     align-items: center;
     text-align: center;
     text-transform:capitalize;
-    font-size: 2rem;
+    font-size: 25px;
     font-weight: bold;
     margin: 10px;
     padding:10px;
@@ -122,7 +143,6 @@ background: mediumaquamarine;
     align-items: center;
     text-align: center;
     text-transform:capitalize;
-    font-size: 2rem;
     font-weight: bold;
     margin: 10px;
     padding:10px;
@@ -137,12 +157,12 @@ background: mediumaquamarine;
 
 .weatherdata {
     display: flex;
-    border-style: ridge;
-    border-radius:10px;
-    border-width: 10px;
     font-size: 25px;
     font-weight: bold;
     color: teal;
-    margin: 10px;
     padding: 10px;
+}
+
+.eachdata {
+    margin: 10px;
 }

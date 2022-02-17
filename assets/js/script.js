@@ -51,7 +51,6 @@ function findWeatherByCity(city) {
                 var divDay = document.createElement('div')
                 var pDate = document.createElement('p')
                 divDay.classList.add('weatherdata')
-                pDate.classList.add('eachdata')
                 pDate.textContent = date;
                 divDay.append(pDate)
                 daysEl.append(divDay)
@@ -67,6 +66,7 @@ function findWeatherByCity(city) {
             //    var divDay = document.createElement('div')
                 var pTemp = document.createElement('p')
                 divDay.classList.add('weatherdata')
+                pTemp.classList.add('eachdata')
                 pTemp.textContent = temp;
                 divDay.append(pTemp)
                 daysEl.append(divDay)
@@ -74,6 +74,7 @@ function findWeatherByCity(city) {
                 // var divDay = document.createElement('div')
                 var pWind = document.createElement('p')
                 divDay.classList.add('weatherdata')
+                pWind.classList.add('eachdata')
                 pWind.textContent = wind;
                 divDay.append(pWind)
                 daysEl.append(divDay)
@@ -81,6 +82,7 @@ function findWeatherByCity(city) {
                 // var divDay = document.createElement('div')
                 var pHumidity = document.createElement('p')
                 divDay.classList.add('weatherdata')
+                pHumidity.classList.add('eachdata')
                 pHumidity.textContent = humidity;
                 divDay.append(pHumidity)
                 daysEl.append(divDay)
