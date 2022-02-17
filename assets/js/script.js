@@ -31,7 +31,7 @@ function findWeatherByCity(city) {
 
            
             
-            dateEl.textContent =timeNow.toLocaleString('en-US', {weekday:"long", month:"long", day:"numeric", year:"numeric"});
+            dateEl.textContent = timeNow.toLocaleString('en-US', {weekday:"long", month:"long", day:"numeric", year:"numeric"});
             iconEl.src ="http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png";
             tempEl.textContent = data.current.temp+ ' F';
             wind_speedEl.textContent = data.current.wind_speed;

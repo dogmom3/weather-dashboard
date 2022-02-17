@@ -15,11 +15,13 @@
             Weather Dashboard
         </h1>
     </header>
-    <div class="container">
-        <div class="column">
+    <div class="container1">
+        <div class="search">
             <h2>ENTER CITY NAME:</h2>
             <input type="text" id="search-input">
             <button type="button" class='btn' id="search-button">SEARCH</button>
+        </div>
+        <div class="history">
             <h2>SEARCH HISTORY</h2>
             <div class="search-history-btns">
                 <button type='button' class="btn" id="history-btn">SEARCH</button>
@@ -28,7 +30,9 @@
                 <button type='button' class="btn" id="history-btn">HERE</button>
             </div>
         </div>
-        <div class="column">
+    </div>
+    <div class="container2">
+        <div class="current">
             <h2>CURRENT WEATHER:</h2>
             <p id='city'></p>
             <p id='date'></p>
@@ -41,17 +45,17 @@
             <p id='sunrise'></p>
             <p id="sunset"></p>
         </div>
-        <div class="column" id="5day">
+        <div class="fiveday">
             <h2>5 DAY FORECAST:</h2>
             <div id="days">
                 <!-- <p id="5dayinfo"></p> -->
             </div>
         </div>
         <footer>
-          
+
         </footer>
     </div>
-<script src="http://MomentJS.com/downloads/moment.js"></script>
+    <script src="http://MomentJS.com/downloads/moment.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
