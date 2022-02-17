@@ -16,7 +16,7 @@
         </h1>
     </header>
     <div class="container">
-        <div class="search-area">
+        <div class="column">
             <h2>ENTER CITY NAME:</h2>
             <input type="text" id="search-input">
             <button type="button" class='btn' id="search-button">SEARCH</button>
@@ -28,7 +28,7 @@
                 <button type='button' class="btn" id="history-btn">HERE</button>
             </div>
         </div>
-        <div class="data">
+        <div class="column">
             <h2>CURRENT WEATHER:</h2>
             <p id='city'></p>
             <p id='date'></p>
@@ -41,7 +41,7 @@
             <p id='sunrise'></p>
             <p id="sunset"></p>
         </div>
-        <div class="forecast">
+        <div class="column" id="5day">
             <h2>5 DAY FORECAST:</h2>
             <div id="days">
                 <!-- <p id="5dayinfo"></p> -->
@@ -51,7 +51,7 @@
           
         </footer>
     </div>
-
+<script src="http://MomentJS.com/downloads/moment.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

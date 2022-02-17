@@ -35,18 +35,24 @@ H2 {
     margin:10px; 
 }
 
-.search-area {
+.column {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    border-style:ridge;
-    border-radius: 10px;
-    border-color: aqua;
-    border-width: 10px;
+    align-items: center;
+    text-align: center;
+    text-transform:capitalize;
+    font-size: 2rem;
+    font-weight: bold;
     margin: 10px;
     padding:10px;
+    border-style: ridge;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: aqua;
+    color:teal;
     background-color: lightcyan;
 }
+
 
 #search-label {
 font-weight: bold;
@@ -89,38 +95,25 @@ background: mediumaquamarine;
     font-size: 2.2rem;
 }
 
-.data {
-    width: 15vw;
-    font-size: 2rem;
-    text-transform:capitalize;
-    font-weight: bold;
-    text-align: center;
-    color:teal;
+.weatherdata {
+    display: flex;
+    flex-direction: row;
+    border-style: ridge;
+    border-radius:10px;
     border-width: 10px;
-    border-style:ridge;
-    border-radius: 10px;
-    border-color: aqua;
-    margin: 10px;
-    padding: 10px;
-    background-color:lightcyan;
-}
-
-.forecast {
-    text-align: center;
-    border-style:ridge;
-    border-radius: 10px;
-    border-color: aqua;
-    border-width: 10px;
-    background-color: lightcyan;
-    margin: 10px;
-    padding: 10px;
-}
-
-#days {
     font-size: 25px;
     font-weight: bold;
     color: teal;
+    margin: 10px;
 }
+
+#5day {
+    
+display: flex;
+flex-direction: row;
+}
+
+
 
 /* .day {
     color: black;

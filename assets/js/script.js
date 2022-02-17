@@ -27,9 +27,11 @@ function findWeatherByCity(city) {
         .then(function (data) {
             console.log('one call', data);
             cityEl.textContent = city
-            var timeNow = new Date();
+            var timeNow =  new Date();
+
+           
             
-            dateEl.textContent =timeNow
+            dateEl.textContent =timeNow.toLocaleString('en-US', {weekday:"long", month:"long", day:"numeric", year:"numeric"});
             iconEl.src ="http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png";
             tempEl.textContent = data.current.temp+ ' F';
             wind_speedEl.textContent = data.current.wind_speed;
@@ -38,7 +40,8 @@ function findWeatherByCity(city) {
         
             //loop through weather attributes the 5 day forecast
             for (let i = 1; i < 6; i++) {
-                var date = data.daily[i].dt;
+                if (i === 7) {break;}
+                var date = new Date(data.daily[i].dt * 1000).toLocaleString('en-US', {weekday:"long", month:"long", day:"numeric", year:"numeric"});
                 var icon = data.daily[i].weather[0].icon;
                 var temp = data.daily[i].temp.day;
                 var wind = data.daily[i].wind_speed;
@@ -47,30 +50,37 @@ function findWeatherByCity(city) {
                 //5 day forecast data
                 var divDay = document.createElement('div')
                 var pDate = document.createElement('p')
+                divDay.classList.add('weatherdata')
+                pDate.classList.add('eachdata')
                 pDate.textContent = date;
                 divDay.append(pDate)
                 daysEl.append(divDay)
 
-                var divDay = document.createElement('div')
+                // var divDay = document.createElement('div')
                 var imgIcon = document.createElement('img')
-                imgIcon.textContent = icon;
+                divDay.classList.add('weatherdata')
+                imgIcon.src = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+                console.log(icon)
                 divDay.append(imgIcon)
                 daysEl.append(divDay)
 
-               var divDay = document.createElement('div')
+            //    var divDay = document.createElement('div')
                 var pTemp = document.createElement('p')
+                divDay.classList.add('weatherdata')
                 pTemp.textContent = temp;
                 divDay.append(pTemp)
                 daysEl.append(divDay)
 
-                var divDay = document.createElement('div')
+                // var divDay = document.createElement('div')
                 var pWind = document.createElement('p')
+                divDay.classList.add('weatherdata')
                 pWind.textContent = wind;
                 divDay.append(pWind)
                 daysEl.append(divDay)
 
-                var divDay = document.createElement('div')
+                // var divDay = document.createElement('div')
                 var pHumidity = document.createElement('p')
+                divDay.classList.add('weatherdata')
                 pHumidity.textContent = humidity;
                 divDay.append(pHumidity)
                 daysEl.append(divDay)
