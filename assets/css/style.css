@@ -1,81 +1,69 @@
 body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background: -webkit-radial-gradient(teal,mediumaquamarine, aqua,lime);
-}
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-h1 {
-    border-style: groove;
-    border-radius: 10px;
-    border-width: 20px;
-    border-color: aqua;
-    background-color: lightcyan;
-    font-size: 4rem;
-    color:navy;
-    text-align: center;
-    padding: 15px;
+    background: -webkit-radial-gradient(teal,mediumaquamarine, aqua,navy);
 }
 
 .container1 {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content:center;
+    border-style: ridge;
+    border-radius: 10px;
+    border-width: 20px;
+    border-color: aqua;
+}
+
+
+h1 {
+    font-size: 40px;
+    color:navy;
+    font-weight: bold;
+    border-radius: 10px;
+    border-width: 20px;
+    padding: 10px;
+    border-color: aqua;
+    border-style: ridge;
+    background-image:-webkit-radial-gradient(lightcyan,lime,teal);
 }
 
 H2 {
     font-size: 2rem;
     color: navy;
     font-weight: bold;
-    margin:10px; 
+    border-color: aqua;
+    border-style: ridge;
+    border-radius: 10px;
+    border-width: 10px;
+    padding: 10px;
+    background-image:-webkit-radial-gradient(lightcyan,lime,teal);
 }
 
-.search, .history {
-    display: flex;
-    flex-direction: column;
+.search {
     align-items: center;
     text-align: center;
     text-transform:capitalize;
     font-weight: bold;
-    margin: 10px;
-    padding:10px;
-    border-style: ridge;
-    border-radius: 10px;
-    border-width: 10px;
-    border-color: aqua;
-    color:teal;
-    background-color: lightcyan;
-}
-
-.search {
-    display: flex;
-    flex-direction: row;
+    margin-right: 10vw;
 }
 
 .searchbtn {
-    margin: 10px;
     font-weight: bold;
     border-radius: 10px;
+    border-width: 10px;
+    border-color: teal;
+    border-style: ridge;
+    background-image:-webkit-radial-gradient(lightcyan,lime,teal);
     cursor: pointer;
-    color: black;
-    background: aqua;
-    height: 6vh;
-    width: 10vw;
-    font-size: 1.5rem;
+    color: navy;
+    height: 8vh;
+    width: 5vw;
+    font-size: 2rem;
 }
 
 .searchbtn:hover {
-    font-size: 1.7rem;
-}
-
-#search-label {
-font-weight: bold;
-color: navy;
-font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: bolder;
 }
 
 #search-input {
@@ -85,31 +73,53 @@ font-size: 2rem;
     text-transform: capitalize;
     text-align: center;
     color: black;
-    border-color: teal;
+    border-color: aqua;
     font-weight: bold;
     margin: 10px;
     border-radius: 10px;
     border-width: 10px;
-    
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
 }
 
 .history {
+    text-transform:capitalize;
+    font-weight: bold;
+    margin-left: 10vw;
+}
+
+.btn-row {
+    display:flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+
 }
 
 .btn {
-height: 8vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 8vh;
 width: 12vw;
 font-size: 2rem;
 margin: 10px;
 font-weight: bold;
-border-radius: 10px;
 cursor: pointer;
-color: black;
-background: mediumaquamarine;
+color: navy;
+background-image:-webkit-radial-gradient(lightcyan,lime,teal);
+border-radius: 10px;
+border-width: 10px;
+border-color: teal;
+border-style: ridge;
 }
 .btn:hover {
     font-size: 2.2rem;
+    font-weight: bolder;
 }
 
 
@@ -133,7 +143,7 @@ background: mediumaquamarine;
     border-radius: 10px;
     border-width: 10px;
     border-color: aqua;
-    color:teal;
+    color:navy;
     background-color: lightcyan;
 }
 
@@ -154,7 +164,6 @@ background: mediumaquamarine;
     background-color: lightcyan;
 }
 
-
 .weatherdata {
     display: flex;
     font-size: 25px;
@@ -165,4 +174,14 @@ background: mediumaquamarine;
 
 .eachdata {
     margin: 10px;
+}
+
+.favorable {
+    background-image:-webkit-radial-gradient(lime,green);
+}
+.moderate {
+    background-image: -webkit-radial-gradient(yellow, goldenrod);
+}
+.severe {
+    background-image: -webkit-radial-gradient(orangered, red);
 }

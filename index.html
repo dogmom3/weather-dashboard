@@ -10,26 +10,28 @@
 </head>
 
 <body>
-    <header>
-        <h1>
-            Weather Dashboard
-        </h1>
-    </header>
     <div class="container1">
         <div class="search">
+            <h1>
+                Weather Report
+            </h1>
             <div class="input">
-                <h2>ENTER CITY NAME:</h2>
+                <h2>ENTER CITY:</h2>
                 <input type="text" id="search-input">
+                <button type="button" class='searchbtn' id="search-button">GO</button>
             </div>
-            <button type="button" class='searchbtn' id="search-button">SEARCH</button>
         </div>
         <div class="history">
-            <h2>SEARCH HISTORY</h2>
+            <!-- <h2>SEARCH HISTORY</h2> -->
             <div class="search-history-btns">
-                <button type='button' class="btn" id="history-btn">SEARCH</button>
-                <button type='button' class="btn" id="history-btn">HISTORY</button>
-                <button type='button' class="btn" id="history-btn">GOES</button>
-                <button type='button' class="btn" id="history-btn">HERE</button>
+                <div class="btn-row">
+                    <button type='button' class="btn" id="history-btn">SEARCH</button>
+                    <button type='button' class="btn" id="history-btn">HISTORY</button>
+                </div>
+                <div class="btn-row">
+                    <button type='button' class="btn" id="history-btn">GOES</button>
+                    <button type='button' class="btn" id="history-btn">HERE</button>
+                </div>
             </div>
         </div>
     </div>
