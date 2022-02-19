@@ -1,6 +1,12 @@
 //list of variables
-var searchBtnEl = document.getElementById('search-button');
-var searchInputEl = document.getElementById('search-input');
+var input = document.querySelector("#input");
+var searchInputEl = document.querySelector("#search-input");
+var searchBtnEl = document.querySelector("#search-button");
+var history = document.querySelector("#history");
+var btnOne = document.querySelector("#btn1");
+var btnTwo = document.querySelector("#btn2");
+var btnThree = document.querySelector("#btn3");
+var btnFour = document.querySelector("#btn4");
 var cityEl = document.getElementById('city');
 var dateEl = document.getElementById('date');
 var iconEl = document.getElementById('icon');
@@ -12,27 +18,31 @@ var daysEl = document.getElementById('days');
 
 //function to call the weather data from openweathermap api by city
 function findWeatherByCity(city) {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + '0ca9bd63c01393dc4b98bf32eef9fed8')
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + "0ca9bd63c01393dc4b98bf32eef9fed8")
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log('weather: ', data);
+            console.log("weather: ", data);
             return { lat: data.coord.lat, lon: data.coord.lon }
         })
         .then(function (data) {
-            return fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + data.lat + '&lon=' + data.lon + '&units=imperial&appid=0ca9bd63c01393dc4b98bf32eef9fed8')
+            return fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + data.lat + "&lon=" + data.lon + "&units=imperial&appid=0ca9bd63c01393dc4b98bf32eef9fed8")
         })
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log('one call', data);
+            console.log("one call", data);
             cityEl.textContent = city
             var timeNow = new Date();
 
+             //create element to hold each days data
+             var divDay = document.createElement("div")
+
             //displays the current weather data
-            dateEl.textContent = timeNow.toLocaleString('en-US', { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+            divDay.classList.add("weatherdata")
+            dateEl.textContent = timeNow.toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
             iconEl.src = "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png";
             tempEl.textContent = "Tempurature: " + data.current.temp + "°F";
             wind_speedEl.textContent = "Wind Speed: " + data.current.wind_speed + " MPH";
@@ -42,52 +52,51 @@ function findWeatherByCity(city) {
             //loop through weather attributes for the 5 day forecast
             for (let i = 1; i < 6; i++) {
                 if (i === 7) { break; }
-                var date = new Date(data.daily[i].dt * 1000).toLocaleString('en-US', { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+                var date = new Date(data.daily[i].dt * 1000).toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
                 var icon = data.daily[i].weather[0].icon;
-                var temp =  "Tempurature: " + data.daily[i].temp.day + "°F";
+                var temp = "Tempurature: " + data.daily[i].temp.day + "°F";
                 var wind = "Wind Speed: " + data.daily[i].wind_speed + " MPH";
                 var humidity = "UV Index: " + data.daily[i].humidity + "%";
 
-                //create element to hold each days data
-                var divDay = document.createElement('div')
+               
 
                 //data for each of the 5 days in the 5 days forecast:
 
                 //dates for each day in the 5 day forecast
-                var pDate = document.createElement('p')
-                divDay.classList.add('weatherdata')
+                var pDate = document.createElement("p")
+                divDay.classList.add("weatherdata")
                 pDate.textContent = date;
                 divDay.append(pDate)
                 daysEl.append(divDay)
 
                 //images for each day in the 5 day forecast
-                var imgIcon = document.createElement('img')
-                divDay.classList.add('weatherdata')
+                var imgIcon = document.createElement("img")
+                divDay.classList.add("weatherdata")
                 imgIcon.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
                 console.log(icon)
                 divDay.append(imgIcon)
                 daysEl.append(divDay)
 
                 //tempuratures for each day in the 5 day forecast
-                var pTemp = document.createElement('p')
-                divDay.classList.add('weatherdata')
-                pTemp.classList.add('eachdata')
+                var pTemp = document.createElement("p")
+                divDay.classList.add("weatherdata")
+                pTemp.classList.add("eachdata")
                 pTemp.textContent = temp;
                 divDay.append(pTemp)
                 daysEl.append(divDay)
 
                 // wind speeds for each day in the 5 day forecast
-                var pWind = document.createElement('p')
-                divDay.classList.add('weatherdata')
-                pWind.classList.add('eachdata')
+                var pWind = document.createElement("p")
+                divDay.classList.add("weatherdata")
+                pWind.classList.add("eachdata")
                 pWind.textContent = wind;
                 divDay.append(pWind)
                 daysEl.append(divDay)
 
                 // humidity percentages for each day in the 5 day forecast
-                var pHumidity = document.createElement('p')
-                divDay.classList.add('weatherdata')
-                pHumidity.classList.add('eachdata')
+                var pHumidity = document.createElement("p")
+                divDay.classList.add("weatherdata")
+                pHumidity.classList.add("eachdata")
                 pHumidity.textContent = humidity;
                 divDay.append(pHumidity)
                 daysEl.append(divDay)
@@ -105,30 +114,47 @@ function findWeatherByCity(city) {
         })
 };
 
-// Local storage
-var addSearchHistory = function(city) {
-    searchHistory(city);
-    localStorage.setItem("", JSON.stringify(searchHistory));
+addToSearchHistory.addEventListener("submit", function (event) {
+    //prevents the page from auto refreshing
+    event.preventdefault();
+    //ignore if searchInput is empty
+    if (searchInputEl.ariaValueMax.length < 1) return;
+    //add search to history
+    history.innerHTML += "<li>" + searchInputEl.value + "<li>";
+    //clear input
+    searchInputEl.value = " ";
+    //save to locaStorage
+    localStorage.setItem("searchInputEl", history.innerHTML);
+}, false);
+//check for saved search
+var saved = localStorage.getItem("SearchInputEl");
+//if saved items, update buttons
+if (saved) {
+    history.innerHTML = saved;
 }
 
 
 
 
+// var addToSearchHistory = function (city) {
+//     addToSearchHistory.oneCall.data.push(city)
+//     localStorage.setItem("userInput", JSON.stringify(userInput));
+// };
+// // })
+
+// //function to display search history
+// var displaySearchHistory = function (history) {
+//     localStorage.setItem("userInputEl", JSON.stringify());
 
 
+//     for (let i = 0; i < history.length; i++) {
+//         var historyBtnArray = [btnOne, btnTwo, btnThree, btnFour];
+//         historyBtnArray[i].textContent = history();
+//     }
+// }
 
 
-// searchBtnEl.addEventListener('click', function () {
-//     var userInput = searchInputEl.value
-//     findWeatherByCity(userInput);
-  
-
-// $('.searchBtn').click(function () {
-//     console.log($(this).siblings('textarea').attr('id'))
-//     console.log($(this).siblings('.description').val())
-
-//     localStorage.setItem($(this).siblings('textarea').attr('id'), $(this).siblings('.description').val());
-//     console.log('clicked');
-// });
-
+// // searchBtnEl.addEventListener('click', function () {
+// //     var userInput = searchInputEl.value
+// //     findWeatherByCity(userInput);
 
