@@ -1,4 +1,3 @@
-//list of variables
 var input = document.querySelector("#input");
 var searchInputEl = document.querySelector("#search-input");
 var searchBtnEl = document.querySelector("#search-button");
@@ -34,11 +33,11 @@ function findWeatherByCity(city) {
             cityEl.textContent = city
             var timeNow = new Date();
 
-            //  //create element to hold each days data
+            //create element to hold each days data
             var divDay = document.createElement("div")
+            divDay.classList.add("weatherdata")
 
             //displays the current weather data
-            divDay.classList.add("weatherdata")
             dateEl.textContent = timeNow.toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
             iconEl.src = "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png";
             tempEl.textContent = "Tempurature: " + data.current.temp + "°F";
@@ -55,10 +54,7 @@ function findWeatherByCity(city) {
                 var wind = "Wind Speed: " + data.daily[i].wind_speed + " MPH";
                 var humidity = "UV Index: " + data.daily[i].humidity + "%";
 
-
-                //data for each of the 5 days in the 5 day forecast:
-
-                //dates for each day in the 5 day forecast
+                //dates for each date in the 5 day forecast
                 var pDate = document.createElement("p")
                 divDay.classList.add("weatherdata")
                 pDate.textContent = date;
@@ -76,7 +72,6 @@ function findWeatherByCity(city) {
                 //tempuratures for each day in the 5 day forecast
                 var pTemp = document.createElement("p")
                 divDay.classList.add("weatherdata")
-                pTemp.classList.add("eachdata")
                 pTemp.textContent = temp;
                 divDay.append(pTemp)
                 daysEl.append(divDay)
@@ -84,7 +79,6 @@ function findWeatherByCity(city) {
                 // wind speeds for each day in the 5 day forecast
                 var pWind = document.createElement("p")
                 divDay.classList.add("weatherdata")
-                pWind.classList.add("eachdata")
                 pWind.textContent = wind;
                 divDay.append(pWind)
                 daysEl.append(divDay)
@@ -92,7 +86,6 @@ function findWeatherByCity(city) {
                 // humidity percentages for each day in the 5 day forecast
                 var pHumidity = document.createElement("p")
                 divDay.classList.add("weatherdata")
-                pHumidity.classList.add("eachdata")
                 pHumidity.textContent = humidity;
                 divDay.append(pHumidity)
                 daysEl.append(divDay)
@@ -107,43 +100,32 @@ function findWeatherByCity(city) {
             } else if (currentUvi >= 6) {
                 uviEl.classList.add("severe");
             }
-        });
+        })
 
+    //add city to search history function
     var addToSearchHistory = function (city) {
-        console.log("city" + city)
-        // addToSearchHistory.oneCall.data.push(city)
-        localStorage.setItem("searchInput", JSON.stringify(userInput));
+        localStorage.setItem("searchInput", JSON.stringify());
     };
 }
 
+//event listener for the search button 
 searchBtnEl.addEventListener('click', function (event) {
     // prevents browser from reloading on click
     event.preventDefault()
-
     var searchInput = searchInputEl.value
     findWeatherByCity(searchInput);
-    console.log(searchInput)
-
     //add search to history
-    //history.append("<li>" + searchInput + "<li>");
     button = document.createElement("button")
     button.classList.add("historyBtn")
     button.appendChild(document.createTextNode(searchInput))
-    button.addEventListener('click', function(event) {
+    button.addEventListener('click', function (event) {
         console.log(event.target.textContent)
         findWeatherByCity(event.target.textContent)
     })
+    //displays search on history button
     historyEl.appendChild(button)
     console.log(historyEl)
-    //clear input
     searchInputEl.value = " ";
-    //save to locaStorage
     localStorage.setItem("searchInputEl", historyEl.innerHTML);
-    //check for saved search
-    var saved = localStorage.getItem("SearchInputEl");
-    //if saved items, update buttons
-    if (saved) {
-        historyEl.innerHTML = saved;
-    }
 })
 
