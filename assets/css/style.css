@@ -54,7 +54,7 @@ H2 {
     border-width: 10px;
     border-color: lime;
     border-style: ridge;
-    background-image:-webkit-radial-gradient(yellow, aqua, purple);
+    background-image:-webkit-radial-gradient(yellow,magenta, aqua, purple);
     cursor: pointer;
     color: navy;
     height: 8vh;
@@ -79,7 +79,7 @@ H2 {
     margin: 10px;
     border-radius: 10px;
     border-width: 10px;
-
+    background-color: lightgray;
 }
 
 .input {
@@ -102,11 +102,11 @@ H2 {
 
 }
 
-.btn {
+.historyBtn {
     display:flex;
     flex-direction: column;
     align-items: center;
-    height: 8vh;
+    height: 6vh;
     width: 12vw;
     font-size: 2rem;
     margin: 10px;
@@ -120,7 +120,7 @@ H2 {
     border-style:dotted;
 }
 
-.btn:hover {
+.historyBtn:hover {
     font-size: 2.2rem;
     font-weight: bolder;
 }
