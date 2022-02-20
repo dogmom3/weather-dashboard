@@ -148,8 +148,6 @@ H2 {
 }
 
 .fiveday {
-    /* display: flex;
-    flex-direction: row; */
     width: 70vw;
     align-items: center;
     text-align: center;
@@ -165,7 +163,7 @@ H2 {
     background-image:-webkit-radial-gradient(lightcyan, aqua, teal, purple);
 }
 
-.weatherdata, .eachDay {
+#days {
     font-size: 25px;
     font-weight: bolder;
     color: navy;
@@ -175,6 +173,10 @@ H2 {
     border-width: 10px;
     border-color: magenta;
     background-image: -webkit-radial-gradient(yellow, lightcyan, aqua);
+}
+#each-day {
+    border-color: black;
+    border-style: ridge;
 }
 
 .favorable {
