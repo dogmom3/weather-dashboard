@@ -61,49 +61,47 @@ function findWeatherByCity(city) {
                 // humidityFive.textContent = "Humidity: " + data.daily[i].humidity + "%";
 
 //attempt at an array to display 5 day forecast and simplify my code--not working--does not like 'inerHTML'--
-const fiveDayWeather = [' new Date(data.daily[i].dt * 1000).toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }) ',
-' "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png" ',
-' "Tempurature: " + data.daily[i].temp.day + "°F" ',
-' "Wind Speed: " + data.daily[i].wind_speed + " MPH" ',
-' "Humidity: " + data.daily[i].humidity + "%" ',]
+// const fiveDayWeather = [' new Date(data.daily[i].dt * 1000).toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }) ',
+// ' "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png" ',
+// ' "Tempurature: " + data.daily[i].temp.day + "°F" ',
+// ' "Wind Speed: " + data.daily[i].wind_speed + " MPH" ',
+// ' "Humidity: " + data.daily[i].humidity + "%" ',]
 
-document.getElementById("each-day").innerHTML = fiveDayWeather;
+// document.getElementById("each-day").innerHTML = fiveDayWeather;
 
                     //this is the code that works to display the 5 day forecast-- it feels like a lot of extra code
                     //also, I CAN NOT figure out how to display each day in it's own div to read better on the screen.
-                // var date = new Date(data.daily[i].dt * 1000).toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
-                // var icon = data.daily[i].weather[0].icon;
-                // var temp = "Tempurature: " + data.daily[i].temp.day + "°F";
-                // var wind = "Wind Speed: " + data.daily[i].wind_speed + " MPH";
-                // var humidity = "Humidity: " + data.daily[i].humidity + "%";
+                var date = new Date(data.daily[i].dt * 1000).toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+                var icon = data.daily[i].weather[0].icon;
+                var temp = "Tempurature: " + data.daily[i].temp.day + "°F";
+                var wind = "Wind Speed: " + data.daily[i].wind_speed + " MPH";
+                var humidity = "Humidity: " + data.daily[i].humidity + "%";
 
+                //dates for each date in the 5 day forecast
+                var pDate = document.createElement("p")
+                pDate.textContent = date;
+                daysEl.append(pDate)
 
-                
-                // //dates for each date in the 5 day forecast
-                // var pDate = document.createElement("p")
-                // pDate.textContent = date;
-                // daysEl.append(pDate)
+                //images for each day in the 5 day forecast
+                var imgIcon = document.createElement("img")
+                imgIcon.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+                console.log(icon)
+                daysEl.append(imgIcon)
 
-                // //images for each day in the 5 day forecast
-                // var imgIcon = document.createElement("img")
-                // imgIcon.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-                // console.log(icon)
-                // daysEl.append(imgIcon)
+                //tempuratures for each day in the 5 day forecast
+                var pTemp = document.createElement("p")
+                pTemp.textContent = temp;
+                daysEl.append(pTemp)
 
-                // //tempuratures for each day in the 5 day forecast
-                // var pTemp = document.createElement("p")
-                // pTemp.textContent = temp;
-                // daysEl.append(pTemp)
+                // wind speeds for each day in the 5 day forecast
+                var pWind = document.createElement("p")
+                pWind.textContent = wind;
+                daysEl.append(pWind)
 
-                // // wind speeds for each day in the 5 day forecast
-                // var pWind = document.createElement("p")
-                // pWind.textContent = wind;
-                // daysEl.append(pWind)
-
-                // // humidity percentages for each day in the 5 day forecast
-                // var pHumidity = document.createElement("p")
-                // pHumidity.textContent = humidity;
-                // daysEl.append(pHumidity)
+                // humidity percentages for each day in the 5 day forecast
+                var pHumidity = document.createElement("p")
+                pHumidity.textContent = humidity;
+                daysEl.append(pHumidity)
             }
 
             // UV Index Color

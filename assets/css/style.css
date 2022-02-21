@@ -28,7 +28,7 @@ h1 {
     background-image:-webkit-radial-gradient(lightcyan,lime,teal);
 }
 
-H2 {
+H2, #enter-city {
     font-size: 2rem;
     color: navy;
     font-weight: bold;
@@ -37,6 +37,7 @@ H2 {
     border-radius: 10px;
     border-width: 10px;
     padding: 10px;
+    /* margin:10px; */
     background-image:-webkit-radial-gradient(lightcyan,lime,teal);
 }
 
@@ -85,6 +86,7 @@ H2 {
 .input {
     display: flex;
     flex-direction: row;
+    margin: 10px;
 }
 
 .historyBtn {
@@ -173,11 +175,12 @@ H2 {
     border-width: 10px;
     border-color: magenta;
     background-image: -webkit-radial-gradient(yellow, lightcyan, aqua);
+    width: 25%;
 }
-#each-day {
+/* #each-day {
     border-color: black;
     border-style: ridge;
-}
+} */
 
 .favorable {
     background-image:-webkit-radial-gradient(lime,green);
