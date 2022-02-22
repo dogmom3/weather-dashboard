@@ -12,13 +12,6 @@ var uviEl = document.getElementById('uvindex');
 var daysEl = document.getElementById('days');
 var eachDay = document.getElementById('each-day');
 
-//use these if you put <p> elements back in the html for 5 day forecast
-// var dateFive = document.getElementById("date-five");
-// var iconFive = document.getElementById('icon-five');
-// var tempFive = document.getElementById('temp-five');
-// var wind_speedFive = document.getElementById('wind_speed-five');
-// var humidityFive = document.getElementById('humidity-five');
-
 //function to call the weather data from openweathermap api by city
 function findWeatherByCity(city) {
     daysEl.innerHTML = ''
@@ -53,29 +46,14 @@ function findWeatherByCity(city) {
             for (let i = 1; i < 6; i++) {
                 if (i === 7) { break; }
 
-                    //this is the data that goes with the <p> elements if I create them in the html for 5 day forecast
-                // dateFive.textContent = new Date(data.daily[i].dt * 1000).toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
-                // iconFive.src = "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png";
-                // tempFive.textContent = "Tempurature: " + data.daily[i].temp.day + "°F";
-                // wind_speedFive.textContent = "Wind Speed: " + data.daily[i].wind_speed + " MPH";
-                // humidityFive.textContent = "Humidity: " + data.daily[i].humidity + "%";
-
-//attempt at an array to display 5 day forecast and simplify my code--not working--does not like 'inerHTML'--
-// const fiveDayWeather = [' new Date(data.daily[i].dt * 1000).toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }) ',
-// ' "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png" ',
-// ' "Tempurature: " + data.daily[i].temp.day + "°F" ',
-// ' "Wind Speed: " + data.daily[i].wind_speed + " MPH" ',
-// ' "Humidity: " + data.daily[i].humidity + "%" ',]
-
-// document.getElementById("each-day").innerHTML = fiveDayWeather;
-
-                    //this is the code that works to display the 5 day forecast-- it feels like a lot of extra code
-                    //also, I CAN NOT figure out how to display each day in it's own div to read better on the screen.
+                //variables
                 var date = new Date(data.daily[i].dt * 1000).toLocaleString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
                 var icon = data.daily[i].weather[0].icon;
                 var temp = "Tempurature: " + data.daily[i].temp.day + "°F";
                 var wind = "Wind Speed: " + data.daily[i].wind_speed + " MPH";
                 var humidity = "Humidity: " + data.daily[i].humidity + "%";
+
+                //create element to contain each individual day of the 5 day forecast
                 var divEl = document.createElement("div")
                 divEl.classList.add("each-day")
 
@@ -105,14 +83,15 @@ function findWeatherByCity(city) {
                 pHumidity.textContent = humidity;
                 divEl.append(pHumidity)
 
+                //append new element for each day to the dom
                 daysEl.append(divEl)
             }
 
             // UV Index Color
             var currentUvi = data.current.uvi
-            if (currentUvi <= 0 && currentUvi <= 2) {
+            if (currentUvi <= 0 || currentUvi <= 2) {
                 uviEl.classList.add("favorable");
-            } else if (currentUvi > 2 && currentUvi < 6) {
+            } else if (currentUvi > 2 || currentUvi < 6) {
                 uviEl.classList.add("moderate");
             } else if (currentUvi >= 6) {
                 uviEl.classList.add("severe");

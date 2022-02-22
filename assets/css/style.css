@@ -26,21 +26,12 @@ flex-direction: row;
 }
 
 h1 {
-    background: linear-gradient(to right, pink, magenta, darkorchid, mediumblue, aqua);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    font-size: 22px;
-}
-
-.input {
-    /* display: flex; */
-    /* margin: 5px; */
-}
-
-#enter-city {
-  
+border-style: ridge;
+border-width: 5px;
+border-radius: 10px;
+border-color: magenta;
+background-image: -webkit-radial-gradient(yellow, lightcyan, aqua);
+    font-size: 25px;
 }
 
 #search-input {
@@ -59,11 +50,12 @@ h1 {
     border-width: 5px;
     border-color: aqua;
     border-style: ridge;
-    background-image:-webkit-radial-gradient(lightcyan,yellow, aqua);
+    background-image:-webkit-radial-gradient(aqua, lightcyan, magenta, teal);
     cursor: pointer;
     color: navy;
-    font-size: 15px;
+    font-size: 18px;
     margin: 5px;
+    padding 5px;
 }
 
 .searchbtn:hover {
@@ -85,7 +77,7 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     color: navy;
-    background-image:-webkit-radial-gradient(lightcyan,magenta, teal);
+    background-image:-webkit-radial-gradient(aqua, lightcyan,magenta, teal);
     border-radius: 10px;
     border-width: 5px;
     border-color: aqua;
@@ -114,7 +106,7 @@ H2 {
     background-image:-webkit-radial-gradient(lightcyan,lime,teal);
 }
 
-.current {
+.current,.fiveday {
     display: flex;
     flex-direction:column;
     text-align: center;    
@@ -125,6 +117,14 @@ H2 {
     border-width: 5px;
     border-color: aqua;
     background-image:-webkit-radial-gradient(lightcyan, aqua, teal,purple);
+}
+
+#city {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
+    text-decoration: underline;
+   
 }
 
 .weather-today {
@@ -140,19 +140,6 @@ H2 {
     border-width: 5px;
     border-color: magenta;
     background-image: -webkit-radial-gradient(yellow, lightcyan, aqua);
-}
-
-.fiveday {
-    display: flex;
-    flex-direction:column;
-    text-align: center;    
-    margin: 10px;
-    padding:10px;
-    border-style: ridge;
-    border-radius: 10px;
-    border-width: 5px;
-    border-color: aqua;
-    background-image:-webkit-radial-gradient(lightcyan, aqua, teal,purple);
 }
 
 #days {
@@ -177,18 +164,21 @@ H2 {
     border-radius: 20px;
     display: flex;
     align-items: center;
+    font-size: 10px;
 }
 .moderate {
     background-image: -webkit-radial-gradient(yellow, goldenrod);
     border-radius: 20px;
     display: flex;
     align-items: center;
+    font-size: 10px;
 }
 .severe {
     background-image: -webkit-radial-gradient(orangered, red);
     border-radius: 20px;
     display: flex;
     align-items: center;
+    font-size: 10px;
 }
 
 footer {
@@ -197,12 +187,12 @@ footer {
     justify-content: center;
     border-style: ridge;
     border-radius: 10px;
-    border-width: 10px;
+    border-width: 5px;
     border-color: lime;
     background-image: -webkit-radial-gradient(yellow, magenta, aqua);
     color: navy;
     font-size: 15px;
     font-weight: bold;
     margin:10px;
-    padding: 20px;
+    padding: 5px;
 }
