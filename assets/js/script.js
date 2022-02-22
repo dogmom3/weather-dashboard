@@ -64,7 +64,7 @@ function findWeatherByCity(city) {
 
                 //images for each day in the 5 day forecast
                 var imgIcon = document.createElement("img")
-                imgIcon.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+                imgIcon.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
                 console.log(icon)
                 divEl.append(imgIcon)
 
