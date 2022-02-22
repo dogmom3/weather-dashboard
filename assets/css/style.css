@@ -1,195 +1,194 @@
 body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     background: -webkit-radial-gradient(lightcyan,magenta, aqua, purple, blue);
+    display: flex;
+    flex-direction: column;
+}
+.container1{
+display: flex;
+flex-direction: row;
 }
 
-.container1 {
+.search {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content:center;
-    border-style: ridge;
-    border-radius: 10px;
-    border-width: 20px;
-    border-color: aqua;
-    background-image:-webkit-radial-gradient( aqua, teal, blue,purple);
-}
-
-
-h1 {
-    font-size: 40px;
-    color:navy;
+    flex-direction: column;
+    text-align: center; 
+    text-transform:capitalize;
     font-weight: bold;
-    border-radius: 10px;
-    border-width: 20px;
-    padding: 10px;
-    border-color: aqua;
-    border-style: ridge;
-    background-image:-webkit-radial-gradient(lightcyan,lime,teal);
-}
-
-H2, #enter-city {
-    font-size: 2rem;
+    font-size: 15px;
     color: navy;
-    font-weight: bold;
     border-color: aqua;
     border-style: ridge;
     border-radius: 10px;
     border-width: 10px;
-    padding: 10px;
-    /* margin:10px; */
-    background-image:-webkit-radial-gradient(lightcyan,lime,teal);
+    background-image:-webkit-radial-gradient(yellow,lightcyan,lime,teal);
 }
 
-.search {
-    align-items: center;
+h1 {
+    background: linear-gradient(to right, pink, magenta, darkorchid, mediumblue, aqua);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 22px;
+}
+
+.input {
+    /* display: flex; */
+    /* margin: 5px; */
+}
+
+#enter-city {
+  
+}
+
+#search-input {
+    font-size: 15px;
+    text-transform: capitalize;
     text-align: center;
-    text-transform:capitalize;
-    font-weight: bold;
-    margin-right: 10vw;
+    border-color: aqua;
+    font-weight: bold;  
+    border-radius: 10px;
+    border-width: 5px;
 }
 
 .searchbtn {
     font-weight: bold;
     border-radius: 10px;
-    border-width: 10px;
-    border-color: lime;
+    border-width: 5px;
+    border-color: aqua;
     border-style: ridge;
-    background-image:-webkit-radial-gradient(yellow,magenta, aqua, purple);
+    background-image:-webkit-radial-gradient(lightcyan,yellow, aqua);
     cursor: pointer;
     color: navy;
-    height: 8vh;
-    width: 8vw;
-    font-size: 2rem;
+    font-size: 15px;
+    margin: 5px;
 }
 
 .searchbtn:hover {
-    font-size: 2.5rem;
-    font-weight: bolder;
+  border-style: dotted;
 }
 
-#search-input {
-    height: 7vh;
-    width: 15vw;
-    font-size: 2.5rem;
-    text-transform: capitalize;
-    text-align: center;
-    color: black;
-    border-color: aqua;
-    font-weight: bold;
-    margin: 10px;
-    border-radius: 10px;
-    border-width: 10px;
-    background-color: lightgray;
-}
-
-.input {
+.history {
     display: flex;
-    flex-direction: row;
-    margin: 10px;
+    flex-direction: column;
+    justify-content: center;
 }
-
 .historyBtn {
     display:flex;
     flex-direction: column;
     align-items: center;
     text-transform:capitalize;
-    width: 12vw;
-    font-size: 2rem;
+    font-size: 18px;
     margin: 10px;
     font-weight: bold;
     cursor: pointer;
     color: navy;
     background-image:-webkit-radial-gradient(lightcyan,magenta, teal);
     border-radius: 10px;
-    border-width: 10px;
-    border-color: lime;
-    border-style:dotted;
+    border-width: 5px;
+    border-color: aqua;
+    border-style:ridge;
 }
 
 .historyBtn:hover {
-    font-size: 2.2rem;
-    font-weight: bolder;
+    border-style: dotted;
 }
 
 
 .container2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+}
+
+H2 {
+    font-size: 15px;
+    color: navy;
+    font-weight: bold;
+    border-color: aqua;
+    border-style: ridge;
+    border-radius: 10px;
+    border-width: 5px;
+    background-image:-webkit-radial-gradient(lightcyan,lime,teal);
 }
 
 .current {
     display: flex;
     flex-direction:column;
-    align-items: center;
-    text-align: center;
-    text-transform:capitalize;
-    font-size: 25px;
-    font-weight: bold;
+    text-align: center;    
     margin: 10px;
     padding:10px;
     border-style: ridge;
     border-radius: 10px;
-    border-width: 10px;
+    border-width: 5px;
     border-color: aqua;
-    color:navy;
     background-image:-webkit-radial-gradient(lightcyan, aqua, teal,purple);
 }
 
 .weather-today {
-    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    text-transform:capitalize;
     font-weight: bolder;
     color: navy;
-    padding: 10px;
+    padding: 5px;
     border-style: ridge;
     border-radius: 10px;
-    border-width: 10px;
+    border-width: 5px;
     border-color: magenta;
     background-image: -webkit-radial-gradient(yellow, lightcyan, aqua);
 }
 
 .fiveday {
-    width: 70vw;
-    align-items: center;
-    text-align: center;
-    text-transform:capitalize;
-    font-weight: bolder;
+    display: flex;
+    flex-direction:column;
+    text-align: center;    
     margin: 10px;
     padding:10px;
     border-style: ridge;
     border-radius: 10px;
-    border-width: 10px;
+    border-width: 5px;
     border-color: aqua;
-    color:navy;
-    background-image:-webkit-radial-gradient(lightcyan, aqua, teal, purple);
+    background-image:-webkit-radial-gradient(lightcyan, aqua, teal,purple);
 }
 
 #days {
-    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.each-day {
+    font-size: 12px;
     font-weight: bolder;
     color: navy;
     padding: 10px;
     border-style: ridge;
     border-radius: 10px;
-    border-width: 10px;
+    border-width: 5px;
     border-color: magenta;
     background-image: -webkit-radial-gradient(yellow, lightcyan, aqua);
-    width: 25%;
 }
-/* #each-day {
-    border-color: black;
-    border-style: ridge;
-} */
 
 .favorable {
     background-image:-webkit-radial-gradient(lime,green);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
 }
 .moderate {
     background-image: -webkit-radial-gradient(yellow, goldenrod);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
 }
 .severe {
     background-image: -webkit-radial-gradient(orangered, red);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
 }
 
 footer {
@@ -198,11 +197,11 @@ footer {
     justify-content: center;
     border-style: ridge;
     border-radius: 10px;
-    border-width: 20px;
+    border-width: 10px;
     border-color: lime;
     background-image: -webkit-radial-gradient(yellow, magenta, aqua);
     color: navy;
-    font-size: 35px;
+    font-size: 15px;
     font-weight: bold;
     margin:10px;
     padding: 20px;

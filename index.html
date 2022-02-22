@@ -12,55 +12,43 @@
 <body>
     <div class="container1">
         <div class="search">
-            <h1>
-                Weather Report
-            </h1>
+            <h1>Weather Report</h1>
             <form class="input">
-                <label for="search" id='enter-city'>Enter City:</label>
-                <input type="text" id="search-input">
-                <button type="submit" class='searchbtn' id="search-button">GO</button>
+                <label for="search" id='enter-city'>Enter City:
+                    <input type="text" id="search-input">
+                    <button type="submit" class='searchbtn' id="search-button">Search
+                    </button>
+                </label>
             </form>
+            <div class="history" id="history"></div>
         </div>
-        <div class="history" id="history">
-
-        </div>
-    </div>
-    <div class="container2">
-        <div class="current">
-            <h2>CURRENT WEATHER:</h2>
-            <div class="weather-today">
-                <p id='city'></p>
-                <p id='date'></p>
-                <img src='' id='icon'></img>
-                <p id='temp'></p>
-                <p id='wind_speed'></p>
-                <p id='humidity'></p>
-                <p id='uvindex'></p>
+        <div class="container2">
+            <div class="current">
+                <h2>CURRENT WEATHER:</h2>
+                <div class="weather-today">
+                    <p id='city'></p>
+                    <p id='date'></p>
+                    <img src='' id='icon'></img>
+                    <p id='temp'></p>
+                    <p id='wind_speed'></p>
+                    <p id='humidity'></p>
+                    <p id='uvindex'></p>
+                </div>
             </div>
-        </div>
-        <div class="fiveday">
-            <h2>5 DAY FORECAST:</h2>
-            <div id="days">
-                <!-- <div id="each-day">
-
-                    unsure why I've hard coded the p elements for the current weather, but not here for the 5 day.
-                        Struggling to get it to work with them anyway. My attempt to do this is just to be able to seperate 
-                        each day as its own container on the page.
-
-                    <p id='date-five'></p>
-                    <img src='' id='icon-five'></img>
-                    <p id='temp-five'></p>
-                    <p id='wind_speed-five'></p>
-                    <p id='humidity-five'></p>
-                </div> -->
+            <div class="fiveday">
+                <h2>5 DAY FORECAST:</h2>
+                <div id="days">
+                </div>
             </div>
         </div>
     </div>
+
     <footer>
         Created by Blair Seivers: CSS Master, 2022 :)
     </footer>
-    <script src="http://MomentJS.com/downloads/moment.js"></script>
-    <script src="assets/js/script.js"></script>
 </body>
+
+<script src="http://MomentJS.com/downloads/moment.js"></script>
+<script src="assets/js/script.js"></script>
 
 </html>

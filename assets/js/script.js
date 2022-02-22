@@ -76,32 +76,36 @@ function findWeatherByCity(city) {
                 var temp = "Tempurature: " + data.daily[i].temp.day + "°F";
                 var wind = "Wind Speed: " + data.daily[i].wind_speed + " MPH";
                 var humidity = "Humidity: " + data.daily[i].humidity + "%";
+                var divEl = document.createElement("div")
+                divEl.classList.add("each-day")
 
                 //dates for each date in the 5 day forecast
                 var pDate = document.createElement("p")
                 pDate.textContent = date;
-                daysEl.append(pDate)
+                divEl.append(pDate)
 
                 //images for each day in the 5 day forecast
                 var imgIcon = document.createElement("img")
                 imgIcon.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
                 console.log(icon)
-                daysEl.append(imgIcon)
+                divEl.append(imgIcon)
 
                 //tempuratures for each day in the 5 day forecast
                 var pTemp = document.createElement("p")
                 pTemp.textContent = temp;
-                daysEl.append(pTemp)
+                divEl.append(pTemp)
 
                 // wind speeds for each day in the 5 day forecast
                 var pWind = document.createElement("p")
                 pWind.textContent = wind;
-                daysEl.append(pWind)
+                divEl.append(pWind)
 
                 // humidity percentages for each day in the 5 day forecast
                 var pHumidity = document.createElement("p")
                 pHumidity.textContent = humidity;
-                daysEl.append(pHumidity)
+                divEl.append(pHumidity)
+
+                daysEl.append(divEl)
             }
 
             // UV Index Color
