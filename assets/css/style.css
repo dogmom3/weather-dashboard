@@ -218,6 +218,11 @@ flex-direction: column;
 flex-wrap: wrap;
 }
 
+#uvindex {
+    display: flex;
+    justify-content: center;
+}
+
 #days {
     display: flex;
     flex-wrap: wrap;
