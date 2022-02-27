@@ -7,13 +7,11 @@ body {
 .container1{
 display: flex;
 flex-direction: row;
-flex-wrap: wrap;
 }
 
 .search {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     text-align: center; 
     text-transform:capitalize;
     font-weight: bold;
@@ -204,44 +202,12 @@ footer {
 
  /* media queries */
  @media screen and (max-width: 980px) {
-     .body{
-      
-     }
-    .weather-today {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .current {
-        
-    }
-    .fiveday {
-       
-    }
-    
-    #days {
+
+.container1{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     flex-direction: column;
-    }
-    
-    .each-day {
- 
-    }
- }
-
-
- @media screen and (max-width: 768px) {
-
- }
-
- @media screen and (max-width: 575px) {
-
- }
-
+}
 .weather-today {
 
 }
@@ -253,3 +219,5 @@ footer {
 .each-day {
 
 }
+
+ }
