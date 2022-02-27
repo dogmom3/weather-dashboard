@@ -223,6 +223,10 @@ flex-wrap: wrap;
     flex-wrap: wrap;
     flex-direction: column;
 }
+footer {
+    display: flex;
+    text-align: center;
+}
 /* 
 .each-day {
 display: flex;
