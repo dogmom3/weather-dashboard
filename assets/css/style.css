@@ -202,22 +202,31 @@ footer {
 
  /* media queries */
  @media screen and (max-width: 980px) {
+  
 
 .container1{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    justify-content: center;
 }
-.weather-today {
 
+
+.weather-today {
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
 }
 
 #days {
-
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
-
+/* 
 .each-day {
-
-}
+display: flex;
+flex-wrap: wrap;
+} */
 
  }
